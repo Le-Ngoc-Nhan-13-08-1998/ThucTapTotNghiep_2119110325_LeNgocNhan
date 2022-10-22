@@ -5,7 +5,7 @@ using System.Web;
 
 namespace NNStore.Models
 {
-    public class ProductMaterData
+    public class UserMasterData
     {
     }
 }

@@ -5,7 +5,7 @@ using System.Web;
 
 namespace NNStore.Models
 {
-    public class UserMaterData
+    public class PostMasterData
     {
     }
 }
