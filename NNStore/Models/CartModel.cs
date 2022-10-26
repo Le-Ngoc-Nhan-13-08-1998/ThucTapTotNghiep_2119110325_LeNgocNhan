@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace NNStore.Models
+namespace NNStore.Context
+
 {
-    public class CartModel
+    public partial class CartModel
     {
         public int Id { get; set; }
         public Product Product { get; set; }

@@ -5,9 +5,9 @@ using System.Linq;
 using System.Web;
 using System.Xml.Linq;
 
-namespace NNStore.Models
+namespace NNStore.Context
 {
-    public class CategoryMasterData
+    public partial class CategoryMasterData
     {
         public int Id { get; set; }
         [Display(Name = "Hình ảnh")]

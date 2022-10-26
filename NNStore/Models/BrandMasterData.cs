@@ -5,9 +5,9 @@ using System.Linq;
 using System.Web;
 using System.Xml.Linq;
 
-namespace NNStore.Models
+namespace NNStore.Context
 {
-    public class BrandMasterData
+    public partial class BrandMasterData
     {
         public int Id { get; set; }
         [Display(Name = "Tên thương hiệu")]

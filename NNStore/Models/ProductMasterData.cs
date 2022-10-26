@@ -7,7 +7,7 @@ using System.Xml.Linq;
 
 namespace NNStore.Models
 {
-    public class ProductMasterData
+    public partial class ProductMasterData
     {
         public int Id { get; set; }
         [Display(Name = "Tên sản phẩm")]
