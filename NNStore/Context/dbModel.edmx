@@ -13,6 +13,7 @@
           <Property Name="Name" Type="nvarchar(max)" />
           <Property Name="Img" Type="nvarchar(max)" />
           <Property Name="Slug" Type="nvarchar(max)" />
+          <Property Name="ShortDetail" Type="nvarchar(max)" />
           <Property Name="ShowOnHomePage" Type="bit" />
           <Property Name="DisplayOrder" Type="int" />
           <Property Name="CreatedOnUtc" Type="datetime" />
@@ -30,6 +31,7 @@
           <Property Name="ParentId" Type="int" />
           <Property Name="Orders" Type="int" />
           <Property Name="MetaDesc" Type="nvarchar(max)" />
+          <Property Name="ShowOnHomePage" Type="bit" />
           <Property Name="MetaKey" Type="nvarchar(max)" />
           <Property Name="CreatedAt" Type="datetime" />
           <Property Name="CreatedBy" Type="int" />
@@ -225,6 +227,7 @@
           <Property Name="CreatedOnUtc" Type="DateTime" Precision="3" />
           <Property Name="UpdateUtc" Type="DateTime" Precision="3" />
           <Property Name="Deleted" Type="Boolean" />
+          <Property Name="ShortDetail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Category">
           <Key>
@@ -243,6 +246,7 @@
           <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
           <Property Name="UpdatedBy" Type="Int32" />
           <Property Name="Status" Type="Int32" />
+          <Property Name="ShowOnHomePage" Type="Boolean" />
         </EntityType>
         <EntityType Name="Config">
           <Key>
@@ -424,6 +428,7 @@
           <EntitySetMapping Name="Brands">
             <EntityTypeMapping TypeName="NNStoreModel.Brand">
               <MappingFragment StoreEntitySet="Brand">
+                <ScalarProperty Name="ShortDetail" ColumnName="ShortDetail" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Img" ColumnName="Img" />
@@ -439,6 +444,7 @@
           <EntitySetMapping Name="Categories">
             <EntityTypeMapping TypeName="NNStoreModel.Category">
               <MappingFragment StoreEntitySet="Category">
+                <ScalarProperty Name="ShowOnHomePage" ColumnName="ShowOnHomePage" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Img" ColumnName="Img" />
                 <ScalarProperty Name="Name" ColumnName="Name" />

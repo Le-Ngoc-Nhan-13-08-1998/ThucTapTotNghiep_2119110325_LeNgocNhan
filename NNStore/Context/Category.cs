@@ -27,5 +27,6 @@ namespace NNStore.Context
         public Nullable<System.DateTime> UpdatedAt { get; set; }
         public Nullable<int> UpdatedBy { get; set; }
         public Nullable<int> Status { get; set; }
+        public Nullable<bool> ShowOnHomePage { get; set; }
     }
 }

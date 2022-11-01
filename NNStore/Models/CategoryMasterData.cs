@@ -32,6 +32,7 @@ namespace NNStore.Context
         [Display(Name = "Thời gian cập nhật")]
         public Nullable<System.DateTime> UpdatedAt { get; set; }
         [Display(Name = "Thời gian cập nhật")]
+        public Nullable<bool> ShowOnHomePage { get; set; }
         public Nullable<int> UpdatedBy { get; set; }
         public Nullable<int> Status { get; set; }
     }

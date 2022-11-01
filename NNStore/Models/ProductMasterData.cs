@@ -5,7 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Xml.Linq;
 
-namespace NNStore.Models
+namespace NNStore.Context
 {
     public partial class ProductMasterData
     {

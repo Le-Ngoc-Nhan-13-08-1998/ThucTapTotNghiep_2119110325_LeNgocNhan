@@ -23,5 +23,6 @@ namespace NNStore.Context
         public Nullable<System.DateTime> CreatedOnUtc { get; set; }
         public Nullable<System.DateTime> UpdateUtc { get; set; }
         public Nullable<bool> Deleted { get; set; }
+        public string ShortDetail { get; set; }
     }
 }
