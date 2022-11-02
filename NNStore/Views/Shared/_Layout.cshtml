@@ -43,7 +43,7 @@
                     <div class="user-menu">
                         <ul>
                             <li><a href="#"><i class="fa fa-user"></i> Tài khoản</a></li>
-                           
+
                             <li><a href="cart.html"><i class="fa fa-user"></i> Giỏ hàng</a></li>
                             <li><a href="checkout.html"><i class="fa fa-user">Thông tin</i> </a></li>
                             <li><a href="#"><i class="fa fa-user"></i> Đăng nhập</a></li>
@@ -51,29 +51,43 @@
                     </div>
                 </div>
 
-                @*<div class="col-md-4">
-                    <div class="header-right">
-                        <ul class="list-unstyled list-inline">
-                            <li class="dropdown dropdown-small">
-                                <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#"><span class="key">currency :</span><span class="value">USD </span><b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">USD</a></li>
-                                    <li><a href="#">INR</a></li>
-                                    <li><a href="#">GBP</a></li>
-                                </ul>
-                            </li>
+                <div class=" col-md-4" style="margin-top: 5px;">
+                    @using (Html.BeginForm("Product", "Product", FormMethod.Get))
+                    {
+                        <div class="form-group form-inline">
+                            @Html.TextBox("SearchString", "", new { @class = "form-control col-md-10" })
+                            <div class="input-group-append" style="margin-left:1px;">
+                                <button class="btn btn-primary" type="submit" style="background-color: #ff6a00">
+                                    <i class="fa fa-search"></i> Tìm kiếm
+                                </button>
+                            </div>
+                        </div>
+                    }
+                </div>
 
-                            <li class="dropdown dropdown-small">
-                                <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#"><span class="key">language :</span><span class="value">English </span><b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">English</a></li>
-                                    <li><a href="#">French</a></li>
-                                    <li><a href="#">German</a></li>
-                                </ul>
-                            </li>
+                @*<div class="col-md-4">
+            <div class="header-right">
+                <ul class="list-unstyled list-inline">
+                    <li class="dropdown dropdown-small">
+                        <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#"><span class="key">currency :</span><span class="value">USD </span><b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">USD</a></li>
+                            <li><a href="#">INR</a></li>
+                            <li><a href="#">GBP</a></li>
                         </ul>
-                    </div>
-                </div>*@
+                    </li>
+
+                    <li class="dropdown dropdown-small">
+                        <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#"><span class="key">language :</span><span class="value">English </span><b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">English</a></li>
+                            <li><a href="#">French</a></li>
+                            <li><a href="#">German</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>*@
             </div>
         </div>
     </div> <!-- End header area -->
@@ -86,10 +100,11 @@
                         <h1><a href=""><img src="~/Content/img/Logo/logo.jpg"></a></h1>
                     </div>
                 </div>
+               
 
                 <div class="col-sm-6">
                     <div class="shopping-item">
-                        <a href="cart.html">Cart - <span class="cart-amunt">$100</span> <i class="fa fa-shopping-cart"></i> <span class="product-count">0</span></a>
+                        <a href="cart.html">Giỏ hàng<span class="cart-amunt"></span> <i class="fa fa-shopping-cart"></i> <span class="product-count">0</span></a>
                     </div>
                 </div>
             </div>
@@ -109,13 +124,13 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="https://localhost:44397/home/index">Trang chủ</a></li>
-                        <li><a href="#">Danh mục</a></li>
+                        <li class="active"><a href="">Trang chủ</a></li>
+                        <li><a href="">Danh mục</a></li>
                         <li><a href="">Mua sắm</a></li>
                         <li><a href="">Giỏ hàng</a></li>
                         <li><a href="">Thông tin cá nhân</a></li>
 
-                        <li><a href="#">Bài viết</a></li>
+                        <li><a href="#">Tin tức</a></li>
                         <li><a href="#">Liên hệ</a></li>
                     </ul>
                 </div>

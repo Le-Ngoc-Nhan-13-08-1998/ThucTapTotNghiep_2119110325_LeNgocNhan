@@ -1,230 +1,302 @@
-﻿
+﻿@model NNStore.Context.Product
 @{
     ViewBag.Title = "Detail";
     Layout = "~/Views/Shared/_Layout.cshtml";
+
+
 }
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <!-- ========================= SECTION CONTENT ========================= -->
-@*<script type="text/javascript">
-    $(function () {
-        $("#addtocart").click(function () {
-            var model = {};
-            //lấy id sản phẩm
-            model.Id = @Model.Id;
-            // lấy số lượng đặt hàng
-            model.Price =@Model.Price;
-            //
-            model.Quantity = $("#ipQuantity").val();
-            //
-            debugger;
-            $.ajax({
-                type: "POST",
-                url: '@Url.Action("AddToCart", "Cart",new {id="cartLink"})',
-                data: JSON.stringify(model),
-                dataType: "json",
-                contentType: "application/json; charset=utf-8",
-                success: function () {
-                    alert("Thêm giỏ hàng thành công!")
-                    $('#CartCount').text(@Session["count"] + 1);
-                },
-                error: function () {
-                    alert("Lỗi trong khi thêm vào giỏ hàng!");
-                }
+<script type="text/javascript">\
+        $(function () {
+            $("#addtocart").click(function () {
+                var model = {};
+                //lấy id sản phẩm
+                model.Id = @Model.Id;
+                // lấy số lượng đặt hàng
+                model.Price =@Model.Price;
+                //
+                model.Quantity = $("#ipQuantity").val();
+                //
+                debugger;
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("AddToCart", "Cart",new {id="cartLink"})',
+                    data: JSON.stringify(model),
+                    dataType: "json",
+                    contentType: "application/json; charset=utf-8",
+                    success: function () {
+                        alert("Thêm giỏ hàng thành công!")
+                        $('#CartCount').text(@Session["count"] + 1);
+                    },
+                    error: function () {
+                        alert("Lỗi trong khi thêm vào giỏ hàng!");
+                    }
+                });
+                return false;
             });
-            return false;
         });
-    });
-</script>*@
+    </script>
 
-<!-- ========================= SECTION CONTENT ========================= -->
-<section class="section-content bg-white padding-y">
+<div class="product-big-title-area">
     <div class="container">
-
-        <!-- ============================ ITEM DETAIL ======================== -->
         <div class="row">
-            <aside class="col-md-6">
-                <div class="card">
-                    <article class="gallery-wrap">
-                        <div class="img-big-wrap">
-                            <div> <a href="#"><img src="~/Content/images/Product/@Model.Img"></a></div>
-                        </div> <!-- slider-product.// -->
-                        <!--<div class="thumbs-wrap">
-                            <a href="#" class="item-thumb"> <img src="~/Content/images/items/15.jpg"></a>
-                            <a href="#" class="item-thumb"> <img src="~/Content/images/items/15-1.jpg"></a>
-                            <a href="#" class="item-thumb"> <img src="~/Content/images/items/15-2.jpg"></a>
-                            <a href="#" class="item-thumb"> <img src="~/Content/images/items/15-1.jpg"></a>
-                        </div>-->
-                        <!-- slider-nav.// -->
-                    </article> <!-- gallery-wrap .end// -->
-                </div> <!-- card.// -->
-            </aside>
-            <main class="col-md-6">
-                <article class="product-info-aside">
+            <div class="col-md-12">
+                <div class="product-bit-title text-center">
+                    <h2>Chi tiết sản phẩm</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-                    <h2 class="title mt-3">@Model.Name </h2>
 
-                    <div class="rating-wrap my-3">
-                        <ul class="rating-stars">
-                            <li style="width:80%" class="stars-active">
-                                <i class="fa fa-star"></i> <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i> <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </li>
-                            <li>
-                                <i class="fa fa-star"></i> <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i> <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </li>
-                        </ul>
-                        <small class="label-rating text-muted">132 reviews</small>
-                        <small class="label-rating text-success"> <i class="fa fa-clipboard-check"></i> 154 orders </small>
-                    </div> <!-- rating-wrap.// -->
+<div class="single-product-area">
+    <div class="zigzag-bottom"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="single-sidebar">
+                    <h2 class="sidebar-title">Tìm kiếm sản phẩm</h2>
+                    <form action="">
+                        <input type="text" placeholder="Nhập tên sản phẩm...">
+                        <input type="submit" value="Tìm kiếm">
+                    </form>
+                </div>
 
-                    <div class="mb-3">
-                        @{
-                            if (Model.PriceDiscount != null)
-                            {
-                                <del class="price h6">@Model.Price $</del>
-                                <span class="price h4 text-danger">@Model.PriceDiscount $</span>
-                            }
-                            else
-                            {
-                                <var class="price h4 text-danger">@Model.Price $</var>
-                            }
+                <div class="single-sidebar">
+                    <h2 class="sidebar-title">Sản phẩm tương tự</h2>
+                    @{
+                        if (Model.CategoryId < 2)
+                        {
+                            
+                            <div class="thubmnail-recent">
+                                <img src="~/Content/img/Product/@Model.Img" class="recent-thumb" alt="">
+                                <h2><a href="">@Model.Name</a></h2>
+                                <div class="product-sidebar-price">
+                                    <ins>@Model.Price VNĐ</ins> <del>@Model.Price VNĐ</del>
+                                </div>
+                            </div>
                         }
-                    </div> <!-- price-detail-wrap .// -->
-
-                    <p>
-                        @Model.ShortDes
-                    </p>
+                    }
 
 
-                    <dl class="row">
-                        <dt class="col-sm-3">Manufacturer</dt>
-                        <dd class="col-sm-9"><a href="#">Great textile Ltd.</a></dd>
-
-                        <dt class="col-sm-3">Article number</dt>
-                        <dd class="col-sm-9">596 065</dd>
-
-                        <dt class="col-sm-3">Guarantee</dt>
-                        <dd class="col-sm-9">2 year</dd>
-
-                        <dt class="col-sm-3">Delivery time</dt>
-                        <dd class="col-sm-9">3-4 days</dd>
-
-                        <dt class="col-sm-3">Availabilty</dt>
-                        <dd class="col-sm-9">in Stock</dd>
-                    </dl>
-
-                    <div class="form-row  mt-4">
-                        <div class="form-group col-md flex-grow-0">
-                            <div class="input-group mb-5 input-spinner">
-                                <input type="text" id="ipQuantity" class="form-control" value="1">
-                            </div>
-                        </div> <!-- col.// -->
-                        <div class="form-group col-md">
-                            <a href="" id="addtocart" class="btn  btn-primary">
-                                <i class="fas fa-shopping-cart"></i>
-                                <span class="text" h>Thêm vào giỏ hàng</span>
-                            </a>
-                        </div> <!-- col.// -->
-                    </div> <!-- row.// -->
-
-                </article> <!-- product-info-aside .// -->
-            </main> <!-- col.// -->
-        </div> <!-- row.// -->
-        <!-- ================ ITEM DETAIL END .// ================= -->
 
 
-    </div> <!-- container .//  -->
-</section>
-<!-- ========================= SECTION CONTENT END// ========================= -->
-<!-- ========================= SECTION  ========================= -->
-<section class="section-name padding-y bg">
-    <div class="container">
 
-        <div class="row">
+                    <div class="thubmnail-recent">
+                        <img src="~/Content/img/Product/oneplus-nord-n10-5g-den-600x600-200x200.jpg" class="recent-thumb" alt="">
+                        <h2><a href="">One Plus Nord N10</a></h2>
+                        <div class="product-sidebar-price">
+                            <ins>@Model.Price VNĐ</ins> <del>@Model.PriceSale VNĐ</del>
+                        </div>
+                    </div>
+                    <div class="thubmnail-recent">
+                        <img src="~/Content/img/Product/samsung-galaxy-s21-tim-600x600-600x600.jpg" class="recent-thumb" alt="">
+                        <h2><a href="">Samsung Galaxy S21</a></h2>
+                        <div class="product-sidebar-price">
+                            <ins>@Model.Price VNĐ</ins> <del>@Model.PriceSale VNĐ</del>
+                        </div>
+                    </div>
+                    <div class="thubmnail-recent">
+                        <img src="~/Content/img/Product/vsmart-live-4-xanh-la-600x600.jpg" class="recent-thumb" alt="">
+                        <h2><a href="Vsmart Live 4"></a></h2>
+                        <div class="product-sidebar-price">
+                            <ins>@Model.Price VNĐ</ins> <del>@Model.PriceSale VNĐ</del>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="single-sidebar">
+                    <h2 class="sidebar-title">Chung chủ đề</h2>
+                    <ul>
+                        <li><a href="">Oppo Reno 4</a></li>
+                        <li><a href="">Asus Rog Phone 3</a></li>
+                        <li><a href="">Xiaomi Black Shark 4</a></li>
+                        <li><a href="">Vivo V20</a></li>
+                        <li><a href="">Huawei Nova 8 Pro</a></li>
+                    </ul>
+                </div>
+            </div>
+
             <div class="col-md-8">
-                <h5 class="title-description">Description</h5>
-                <p>
-                    @Model.FullDescription
-                </p>
-                <ul class="list-check">
-                    <li>Material: Stainless steel</li>
-                    <li>Weight: 82kg</li>
-                    <li>built-in drip tray</li>
-                    <li>Open base for pots and pans</li>
-                    <li>On request available in propane execution</li>
-                </ul>
+                <div class="product-content-right">
+                    @*<div class="product-breadcroumb">
+                        <a href="">Home</a>
+                        <a href="">Category Name</a>
+                        <a href="">Sony Smart TV - 2015</a>
+                    </div>*@
 
-                <h5 class="title-description">Specifications</h5>
-                <table class="table table-bordered">
-                    <tr> <th colspan="2">Basic specs</th> </tr>
-                    <tr> <td>Type of energy</td><td>Lava stone</td> </tr>
-                    <tr> <td>Number of zones</td><td>2</td> </tr>
-                    <tr> <td>Automatic connection	</td> <td> <i class="fa fa-check text-success"></i> Yes </td></tr>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="product-images">
+                                <div class="product-main-img">
+                                    <img src="img/product-2.jpg" alt="">
+                                </div>
 
-                    <tr> <th colspan="2">Dimensions</th> </tr>
-                    <tr> <td>Width</td><td>500mm</td> </tr>
-                    <tr> <td>Depth</td><td>400mm</td> </tr>
-                    <tr> <td>Height	</td><td>700mm</td> </tr>
-
-                    <tr> <th colspan="2">Materials</th> </tr>
-                    <tr> <td>Exterior</td><td>Stainless steel</td> </tr>
-                    <tr> <td>Interior</td><td>Iron</td> </tr>
-
-                    <tr> <th colspan="2">Connections</th> </tr>
-                    <tr> <td>Heating Type</td><td>Gas</td> </tr>
-                    <tr> <td>Connected load gas</td><td>15 Kw</td> </tr>
-
-                </table>
-            </div>  col.//
-
-            @*<aside class="col-md-4">
-
-                    <div class="box">
-
-                        <h5 class="title-description">Sản phẩm tương tự</h5>
-
-                        <article class="media mb-3">
-                            <a href="#"><img class="img-sm mr-3" src="~/Content/images/posts/3.jpg"></a>
-                            <div class="media-body">
-                                <h6 class="mt-0"><a href="#">How to use this item</a></h6>
-                                <p class="mb-2"> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin </p>
+                                <div class="product-gallery">
+                                    <img src="img/product-thumb-1.jpg" alt="">
+                                    <img src="img/product-thumb-2.jpg" alt="">
+                                    <img src="img/product-thumb-3.jpg" alt="">
+                                </div>
                             </div>
-                        </article>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="product-inner">
+                                <h2 class="product-name">@Model.Name</h2>
+                                <div class="product-inner-price">
+                                    <ins>@Model.Price VNĐ</ins> <del>@Model.PriceSale VNĐ</del>
+                                </div>
+
+                                <form action="" class="cart">
+                                    <div class="quantity">
+                                        <input type="number" size="4" class="input-text qty text" title="Qty" value="1" name="quantity" min="1" step="1">
+                                    </div>
+                                    <button class="add_to_cart_button" type="submit">Thêm vào giỏ hàng</button>
+                                </form>
+
+                                @*<div class="product-inner-category">
+                                    <p>Category: <a href="">Summer</a>. Tags: <a href="">awesome</a>, <a href="">best</a>, <a href="">sale</a>, <a href="">shoes</a>. </p>
+                                </div>*@
+
+                                <div role="tabpanel">
+                                    <ul class="product-tab" role="tablist">
+                                        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Chi tiết</a></li>
+                                        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Giới thiệu</a></li>
+                                    </ul>
+                                    <div class="tab-content">
+                                        <div role="tabpanel" class="tab-pane fade in active" id="home">
+                                            <h2>Chi tiết sản phẩm</h2>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tristique, diam in consequat iaculis, est purus iaculis mauris, imperdiet facilisis ante ligula at nulla. Quisque volutpat nulla risus, id maximus ex aliquet ut. Suspendisse potenti. Nulla varius lectus id turpis dignissim porta. Quisque magna arcu, blandit quis felis vehicula, feugiat gravida diam. Nullam nec turpis ligula. Aliquam quis blandit elit, ac sodales nisl. Aliquam eget dolor eget elit malesuada aliquet. In varius lorem lorem, semper bibendum lectus lobortis ac.</p>
+
+                                            <p>Mauris placerat vitae lorem gravida viverra. Mauris in fringilla ex. Nulla facilisi. Etiam scelerisque tincidunt quam facilisis lobortis. In malesuada pulvinar neque a consectetur. Nunc aliquam gravida purus, non malesuada sem accumsan in. Morbi vel sodales libero.</p>
+                                        </div>
+                                        <div role="tabpanel" class="tab-pane fade" id="profile">
+                                            <h2>Reviews</h2>
+                                            <div class="submit-review">
+                                                <p><label for="name">Name</label> <input name="name" type="text"></p>
+                                                <p><label for="email">Email</label> <input name="email" type="email"></p>
+                                                <div class="rating-chooser">
+                                                    <p>Your rating</p>
+
+                                                    <div class="rating-wrap-post">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                    </div>
+                                                </div>
+                                                <p><label for="review">Your review</label> <textarea name="review" id="" cols="30" rows="10"></textarea></p>
+                                                <p><input type="submit" value="Submit"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
 
 
+                    <div class="related-products-wrapper">
+                        <h2 class="related-products-title">Xem thêm sản phẩm</h2>
+                        <div class="related-products-carousel">
+                            <div class="single-product">
+                              
+                                <div class="product-f-image">
+                                    <img src="img/product-1.jpg" alt="">
+                                    <div class="product-hover">
+                                        <a href="" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</a>
+                                        <a href="" class="view-details-link"><i class="fa fa-link"></i> Xem chi tiết</a>
+                                    </div>
+                                </div>
 
-                    </div>  box.//
-                </aside>  col.//*@
+                                <h2><a href="">Sony Smart TV - 2015</a></h2>
+
+                                <div class="product-carousel-price">
+                                    <ins>$700.00</ins> <del>$100.00</del>
+                                </div>
+                            </div>
+                            <div class="single-product">
+                                <div class="product-f-image">
+                                    <img src="img/product-2.jpg" alt="">
+                                    <div class="product-hover">
+                                        <a href="" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+                                        <a href="" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                    </div>
+                                </div>
+
+                                <h2><a href="">Apple new mac book 2015 March :P</a></h2>
+                                <div class="product-carousel-price">
+                                    <ins>$899.00</ins> <del>$999.00</del>
+                                </div>
+                            </div>
+                            <div class="single-product">
+                                <div class="product-f-image">
+                                    <img src="img/product-3.jpg" alt="">
+                                    <div class="product-hover">
+                                        <a href="" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+                                        <a href="" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                    </div>
+                                </div>
+
+                                <h2><a href="">Apple new i phone 6</a></h2>
+
+                                <div class="product-carousel-price">
+                                    <ins>$400.00</ins> <del>$425.00</del>
+                                </div>
+                            </div>
+                            <div class="single-product">
+                                <div class="product-f-image">
+                                    <img src="img/product-4.jpg" alt="">
+                                    <div class="product-hover">
+                                        <a href="" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+                                        <a href="" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                    </div>
+                                </div>
+
+                                <h2><a href="">Sony playstation microsoft</a></h2>
+
+                                <div class="product-carousel-price">
+                                    <ins>$200.00</ins> <del>$225.00</del>
+                                </div>
+                            </div>
+                            <div class="single-product">
+                                <div class="product-f-image">
+                                    <img src="img/product-5.jpg" alt="">
+                                    <div class="product-hover">
+                                        <a href="" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+                                        <a href="" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                    </div>
+                                </div>
+
+                                <h2><a href="">Sony Smart Air Condtion</a></h2>
+
+                                <div class="product-carousel-price">
+                                    <ins>$1200.00</ins> <del>$1355.00</del>
+                                </div>
+                            </div>
+                            <div class="single-product">
+                                <div class="product-f-image">
+                                    <img src="img/product-6.jpg" alt="">
+                                    <div class="product-hover">
+                                        <a href="" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+                                        <a href="" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                    </div>
+                                </div>
+
+                                <h2><a href="">Samsung gallaxy note 4</a></h2>
+
+                                <div class="product-carousel-price">
+                                    <ins>$400.00</ins>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
     </div>
-</section>
-@*========================= SECTION CONTENT END// =========================
-    ========================= SECTION SUBSCRIBE  =========================*@
-<section class="padding-y-lg bg-light border-top">
-    <div class="container">
-
-        <p class="pb-2 text-center">Delivering the latest product trends and industry news straight to your inbox</p>
-
-        <div class="row justify-content-md-center">
-            <div class="col-lg-4 col-sm-6">
-                <form class="form-row">
-                    <div class="col-8">
-                        <input class="form-control" placeholder="Your Email" type="email">
-                    </div>  col.//
-                    <div class="col-4">
-                        <button type="submit" class="btn btn-block btn-warning"> <i class="fa fa-envelope"></i> Subscribe </button>
-                    </div>  col.//
-                </form>
-                <small class="form-text">We’ll never share your email address with a third-party. </small>
-            </div>  col-md-6.//
-        </div>
-
-
-    </div>
-</section>
-@*========================= SECTION SUBSCRIBE END// =========================*@
-
+</div>

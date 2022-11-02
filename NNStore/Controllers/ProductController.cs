@@ -45,6 +45,8 @@ namespace NNStore.Controllers
         public ActionResult Detail(int Id)
         {
             var objProduct = objNNStoreEntities.Products.Where(n => n.Id == Id).FirstOrDefault();
+            var listProduct = new List<Product>();
+            listProduct = objNNStoreEntities.Products.ToList();
 
             return View(objProduct);
         }
