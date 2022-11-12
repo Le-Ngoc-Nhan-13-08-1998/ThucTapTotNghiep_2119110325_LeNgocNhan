@@ -13,5 +13,9 @@ namespace NNStore.Context
         public Product Product { get; set; }
         public double Price { get; set; }
         public int Quantity { get; set; }
+        public string Img { get; set; }
+        public string Name { get; set; }
+        
+        public Nullable<decimal> PriceSale { get; set; }
     }
 }
