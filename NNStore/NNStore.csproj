@@ -273,12 +273,12 @@
     <Content Include="Views\Category\Category.cshtml" />
     <Content Include="Views\Category\ProductCategory.cshtml" />
     <Content Include="Views\Product\Detail.cshtml" />
+    <Content Include="Views\Cart\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Account\" />
     <Folder Include="Views\Brand\" />
-    <Folder Include="Views\Cart\" />
     <Folder Include="Views\Order\" />
     <Folder Include="Views\Payment\" />
   </ItemGroup>

@@ -21,6 +21,8 @@ namespace NNStore.Models
         public List<Slider> ListSlider { get; set; }
         public List<Topic> ListTopic { get; set; }
         public List<Brand> ListBrand { get; set; }
+        public int Id { get; set; }
+        public Nullable<decimal> Price { get; set; }
 
     }
 }

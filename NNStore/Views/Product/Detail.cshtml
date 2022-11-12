@@ -66,9 +66,7 @@
 
                 <div class="single-sidebar">
                     <h2 class="sidebar-title">Sản phẩm tương tự</h2>
-                    @{
-                        if (Model.CategoryId < 2)
-                        {
+                   
                             
                             <div class="thubmnail-recent">
                                 <img src="~/Content/img/Product/@Model.Img" class="recent-thumb" alt="">
@@ -77,9 +75,7 @@
                                     <ins>@Model.Price VNĐ</ins> <del>@Model.Price VNĐ</del>
                                 </div>
                             </div>
-                        }
-                    }
-
+                      
 
 
 
@@ -131,14 +127,14 @@
                         <div class="col-sm-6">
                             <div class="product-images">
                                 <div class="product-main-img">
-                                    <img src="img/product-2.jpg" alt="">
+                                    <img src="~/Content/img/Product/@Model.Img" alt="">
                                 </div>
 
-                                <div class="product-gallery">
-                                    <img src="img/product-thumb-1.jpg" alt="">
-                                    <img src="img/product-thumb-2.jpg" alt="">
-                                    <img src="img/product-thumb-3.jpg" alt="">
-                                </div>
+                                @*<div class="product-gallery">
+                                    <img src="~/Content/img/Product/@Model.Img" alt="">
+                                    <img src="~/Content/img/Product/@Model.Img" alt="">
+                                    <img src="~/Content/img/Product/@Model.Img" alt="">
+                                </div>*@
                             </div>
                         </div>
 
@@ -168,9 +164,8 @@
                                     <div class="tab-content">
                                         <div role="tabpanel" class="tab-pane fade in active" id="home">
                                             <h2>Chi tiết sản phẩm</h2>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tristique, diam in consequat iaculis, est purus iaculis mauris, imperdiet facilisis ante ligula at nulla. Quisque volutpat nulla risus, id maximus ex aliquet ut. Suspendisse potenti. Nulla varius lectus id turpis dignissim porta. Quisque magna arcu, blandit quis felis vehicula, feugiat gravida diam. Nullam nec turpis ligula. Aliquam quis blandit elit, ac sodales nisl. Aliquam eget dolor eget elit malesuada aliquet. In varius lorem lorem, semper bibendum lectus lobortis ac.</p>
-
-                                            <p>Mauris placerat vitae lorem gravida viverra. Mauris in fringilla ex. Nulla facilisi. Etiam scelerisque tincidunt quam facilisis lobortis. In malesuada pulvinar neque a consectetur. Nunc aliquam gravida purus, non malesuada sem accumsan in. Morbi vel sodales libero.</p>
+                                            <p>@Model.ShortDes</p>
+                                            <p>@Model.FullDescription</p>
                                         </div>
                                         <div role="tabpanel" class="tab-pane fade" id="profile">
                                             <h2>Reviews</h2>
@@ -206,46 +201,47 @@
                             <div class="single-product">
                               
                                 <div class="product-f-image">
-                                    <img src="img/product-1.jpg" alt="">
+                                    <img src="~/Content/img/Product/acer-predator-triton-300-pt315-53-71dj-i7-600x600.jpg" alt="">
                                     <div class="product-hover">
                                         <a href="" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</a>
                                         <a href="" class="view-details-link"><i class="fa fa-link"></i> Xem chi tiết</a>
                                     </div>
                                 </div>
 
-                                <h2><a href="">Sony Smart TV - 2015</a></h2>
+                                <h2><a href="">Acer Predator Trion 300</a></h2>
 
                                 <div class="product-carousel-price">
-                                    <ins>$700.00</ins> <del>$100.00</del>
+                                    <ins>@Model.Price VNĐ</ins> <del>@Model.PriceSale VNĐ</del>
                                 </div>
                             </div>
                             <div class="single-product">
                                 <div class="product-f-image">
-                                    <img src="img/product-2.jpg" alt="">
+                                    <img src="~/Content/img/Product/asus-rog-strix-gaming-g513ih-r7-4800h-8gb-512gb-4gb-600x600.jpg" alt="">
                                     <div class="product-hover">
                                         <a href="" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
                                         <a href="" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                                     </div>
                                 </div>
 
-                                <h2><a href="">Apple new mac book 2015 March :P</a></h2>
+                                <h2><a href="">Rog Strix Gaming</a></h2>
                                 <div class="product-carousel-price">
-                                    <ins>$899.00</ins> <del>$999.00</del>
+                                    <ins>@Model.Price VNĐ</ins> <del>@Model.PriceSale VNĐ</del>
                                 </div>
                             </div>
                             <div class="single-product">
                                 <div class="product-f-image">
-                                    <img src="img/product-3.jpg" alt="">
+                                    <img src="~/Content/img/Product/asus-tuf-gaming-fx506lhb-i5-hn188w-600x600.jpg" alt="">
                                     <div class="product-hover">
                                         <a href="" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
                                         <a href="" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                                     </div>
                                 </div>
 
-                                <h2><a href="">Apple new i phone 6</a></h2>
+                                <h2><a href="">Tuf Gaming</a></h2>
 
                                 <div class="product-carousel-price">
-                                    <ins>$400.00</ins> <del>$425.00</del>
+                                    <ins>@Model.Price VNĐ</ins> <del>@Model.PriceSale VNĐ</del>
+
                                 </div>
                             </div>
                             <div class="single-product">
