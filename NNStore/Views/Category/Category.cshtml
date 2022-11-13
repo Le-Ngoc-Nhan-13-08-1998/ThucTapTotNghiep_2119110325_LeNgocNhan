@@ -13,7 +13,7 @@
                 <div class="col-md-3">
                     <div class="card card-category" style="height: 550px">
                         <div class="img-wrap w-100" style="background:#ffd7d7">
-                            <a href="/nhung-san-pham-danh-muc-@item.Slug/@item.Id"><img src="~/Content/img/Category/@item.Img"></a>
+                            <a href="   @Html.ActionLink(item.Name, "ProductCategory", "Category", new { @Id = item.Id }, null)"><img src="~/Content/img/Category/@item.Img"></a>
                         </div>
                         <div class="card-body">
                             <h4 class="card-title"><a href="">@item.Name </a></h4>

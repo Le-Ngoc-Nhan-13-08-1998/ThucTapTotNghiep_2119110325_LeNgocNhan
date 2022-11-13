@@ -1,5 +1,5 @@
 ﻿@model IEnumerable<NNStore.Context.CartModel>
-@model NNStore.Context.CartModel
+@*@model NNStore.Context.CartModel*@
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -68,8 +68,8 @@
                         <h2 class="sidebar-title">Sản phẩm tương tự</h2>
 
 
-                        <div class="thubmnail-recent">
-                            <img src="~/Content/img/Product/@Model.Img" class="recent-thumb" alt="">
+                        @*<div class="thubmnail-recent">
+                            <img src="~/Content/img/Product/@Model" class="recent-thumb" alt="">
                             <h2><a href="">@Model.Name</a></h2>
                             <div class="product-sidebar-price">
                                 <ins>@Model.Price VNĐ</ins> <del>@Model.Price VNĐ</del>
@@ -101,7 +101,7 @@
                                 <ins>@Model.Price VNĐ</ins> <del>@Model.PriceSale VNĐ</del>
                             </div>
                         </div>
-                    </div>
+                    </div>*@
 
                     <div class="single-sidebar">
                         <h2 class="sidebar-title">Chung chủ đề</h2>
@@ -142,11 +142,11 @@
                                                     </td>
 
                                                     <td class="product-thumbnail">
-                                                        <a href=""><img width="145" height="145" alt="poster_1_up" class="shop_thumbnail" src="~/Content/img/Product/@item.Product.Avatar"></a>
+                                                        <a href=""><img width="145" height="145" alt="poster_1_up" class="shop_thumbnail" src="~/Content/img/Product/@item.Product.Img"></a>
                                                     </td>
 
                                                     <td class="product-name">
-                                                        <a href="single-product.html">@Model.Product.Name</a>
+                                                        <a href="#">@item.Product.Name</a>
                                                     </td>
 
                                                     <td id="product-price">
