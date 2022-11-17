@@ -12,126 +12,99 @@ namespace NNStore.Controllers
 {
     public class HomeController : Controller
     {
-          NNStoreEntities dbWeb = new NNStoreEntities();
+            NNStoreEntities objNNStoreEntities = new NNStoreEntities();
             public ActionResult Index()
             {
                 HomeModel objHomeModel = new HomeModel();
-                objHomeModel.ListCategory = dbWeb.Categories.ToList();
-                objHomeModel.ListProduct = dbWeb.Products.ToList();
-                objHomeModel.ListBrand = dbWeb.Brands.ToList();
-                objHomeModel.ListSlider = dbWeb.Sliders.ToList();
-
-
+                objHomeModel.ListCategory = objNNStoreEntities.Categories.ToList();
+                objHomeModel.ListProduct = objNNStoreEntities.Products.ToList();
+            objHomeModel.ListSlider = objNNStoreEntities.Sliders.ToList();
+            objHomeModel.ListBrand = objNNStoreEntities.Brands.ToList();
             return View(objHomeModel);
             }
-            
-            //GET: Register
-            [HttpGet]
-            [AllowAnonymous]
-            [ActionName("dang-ky")]
-            public ActionResult Register()
+
+            public ActionResult About()
             {
-                return View("Register");
+                ViewBag.Message = "Your application description page.";
+
+                return View();
             }
 
-            //POST: Register
+            public ActionResult Contact()
+            {
+                ViewBag.Message = "Your contact page.";
+
+                return View();
+            }
+            [HttpGet]
+            public ActionResult Register()
+            {
+                return View();
+            }
             [HttpPost]
-            [AllowAnonymous]
             [ValidateAntiForgeryToken]
             public ActionResult Register(User _user)
             {
                 if (ModelState.IsValid)
                 {
-                    bool agree =Convert.ToBoolean(_user.Agree.ToString());
-                    if (agree == true)
+                    var check = objNNStoreEntities.Users.FirstOrDefault(s => s.Email == _user.Email);
+                    if (check == null)
                     {
-                        var check = dbWeb.Users.FirstOrDefault(s => s.Email == _user.Email);
-                        if (check == null)
-                        {
-                            _user.Password = GetMD5(_user.Password);
-                            dbWeb.Configuration.ValidateOnSaveEnabled = false;
-                            dbWeb.Users.Add(_user);
-                            dbWeb.SaveChanges();
-                            return RedirectToAction("Index");
-                        }
-                        else
-                        {
-                            ViewBag.error = "* Email đã tồn tại. Vui lòng nhập địa chỉ email khác!";
-                            return View();
-                        }
+                        _user.Password = GetMD5(_user.Password);
+                        objNNStoreEntities.Configuration.ValidateOnSaveEnabled = false;
+                        objNNStoreEntities.Users.Add(_user);
+                        objNNStoreEntities.SaveChanges();
+                        return RedirectToAction("Index");
                     }
                     else
                     {
-                        ViewBag.error1 = "* Bạn chưa đồng ý với điểu khoản!";
+                        ViewBag.error = "Email already exists";
+                        return View();
                     }
-
                 }
                 return View();
+
             }
             [HttpGet]
-            [AllowAnonymous]
-            [ActionName("dang-nhap")]
             public ActionResult Login()
             {
-                return View("Login");
+                return View();
             }
 
             [HttpPost]
-            [AllowAnonymous]
             [ValidateAntiForgeryToken]
-            public ActionResult Login(string email, string passwords,bool remember)
+            public ActionResult Login(string email, string password)
             {
-                if (ModelState.IsValid) {
-                    if (email.Length == 0)
-                        ViewBag.error1 = "* Vui lòng nhập email.";
-                    if (passwords.Length == 0)
-                        ViewBag.error2 = "* Vui lòng nhập password.";
-                    if (remember == true)
+                if (ModelState.IsValid)
+                {
+                    var f_password = GetMD5(password);
+                    var data = objNNStoreEntities.Users.Where(s => s.Email.Equals(email) && s.Password.Equals(f_password)).ToList();
+                    if (data.Count() > 0)
                     {
-                        var f_password = GetMD5(passwords);
-                        var data = dbWeb.Users.Where(s => s.Email.Equals(email) && s.Password.Equals(f_password)).ToList();
-                        if (data.Count() > 0)
-                        {
-                            //add session
-                            Session["FullName"] = data.FirstOrDefault().FullName ;
-                            Session["Email"] = data.FirstOrDefault().Email;
-                            Session["UserId"] = data.FirstOrDefault().Id;
-                            Session["Gender"] = data.FirstOrDefault().Gender;
-                            Session["Phone"] = data.FirstOrDefault().Phone;
-                            Session["Address"] = data.FirstOrDefault().Address;
-                         
-                            return RedirectToAction("Index");
-                        }
-                        else
-                        {
-                            ViewBag.error = "* Đăng nhập thất bại!";
-                            return View();
-                        }
+                    //add session
+                        Session["UserName"] = data.FirstOrDefault().UserName;
+                    Session["Password"] = data.FirstOrDefault().Password;
+                    Session["FullName"] = data.FirstOrDefault().FullName;
+                    Session["Img"] = data.FirstOrDefault().Img;
+                    Session["Email"] = data.FirstOrDefault().Email;
+                    Session["Phone"] = data.FirstOrDefault().Phone;
+                    Session["Address"] = data.FirstOrDefault().Address;
+
+                    return RedirectToAction("Index");
                     }
                     else
                     {
-                        ViewBag.error3 = "* Bạn chưa đồng ý với thông tin đăng nhập.";
-                        return View();
+                        ViewBag.error = "Login failed";
+                        return RedirectToAction("Login");
                     }
-
                 }
-                else {
-                    return View();
-                }
+                return View();
             }
-            //Logout
             public ActionResult Logout()
             {
                 Session.Clear();//remove session
                 return RedirectToAction("Login");
             }
-            //Account
-            public ActionResult Account(int id)
-            {
-                var objaccount = dbWeb.Users.Where(n => n.Id == id).FirstOrDefault();
-                return View(objaccount);
-            }
-            //create a string MD5
             public static string GetMD5(string str)
             {
                 MD5 md5 = new MD5CryptoServiceProvider();
@@ -145,7 +118,7 @@ namespace NNStore.Controllers
 
                 }
                 return byte2String;
-            } 
+            }
 
         }
     }

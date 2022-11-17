@@ -4,6 +4,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<!-- ========================= SECTION CONTENT ========================= -->
 <section class="section-content padding-y">
     <div class="container">
 
@@ -11,19 +12,51 @@
             @foreach (var item in Model)
             {
                 <div class="col-md-3">
-                    <div class="card card-category" style="height: 550px">
-                        <div class="img-wrap w-100" style="background:#ffd7d7">
-                            <a href="   @Html.ActionLink(item.Name, "ProductCategory", "Category", new { @Id = item.Id }, null)"><img src="~/Content/img/Category/@item.Img"></a>
+
+                    <div class="card card-banner">
+                        <div class="img-wrap" style="background: #ffd7d7 ">
+                            <img src="~/Content/images/category/@item.Img">
                         </div>
                         <div class="card-body">
-                            <h4 class="card-title"><a href="">@item.Name </a></h4>
-                        </div>
-                        <div class="card-footer">
-                            @*<p>@item.ShortDetail</p>*@
+                            <h4 class="card-title">
+                                @Html.ActionLink(item.Name, "ProductCategory", "Category", new { @Id = item.Id }, null)
+                            </h4>
                         </div>
                     </div>
                 </div> <!-- col.// -->
             }
+
+
         </nav> <!-- row.// -->
+
+
     </div> <!-- container .//  -->
 </section>
+<!-- ========================= SECTION CONTENT END// ========================= -->
+<!-- ========================= SECTION SUBSCRIBE  ========================= -->
+<section class="padding-y-lg bg-light border-top">
+    <div class="container">
+
+
+
+        <!--<div class="row justify-content-md-center">
+            <div class="col-lg-4 col-sm-6">
+                <form class="form-row">
+                    <div class="col-8">
+                        <input class="form-control" placeholder="Your Email" type="email">
+                    </div>-->
+        <!-- col.// -->
+        <!--<div class="col-4">
+            <button type="submit" class="btn btn-block btn-warning"> <i class="fa fa-envelope"></i> Subscribe </button>
+        </div>-->
+        <!-- col.// -->
+        <!--</form>
+            <small class="form-text">We’ll never share your email address with a third-party. </small>
+        </div>-->
+        <!-- col-md-6.// -->
+        <!--</div>-->
+
+
+    </div>
+</section>
+<!-- ========================= SECTION SUBSCRIBE END// ========================= -->
