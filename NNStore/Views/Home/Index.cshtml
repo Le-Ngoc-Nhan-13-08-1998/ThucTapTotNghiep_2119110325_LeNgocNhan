@@ -48,7 +48,7 @@
                         <h4 class="caption subtitle">
                             <span class="primary alert-warning">HOT </span>
                         </h4>
-                        <a class="caption button-radius" href="#"><span class="icon"></span>Mua ngay</a>
+                        <a class="caption button-radius" href="@Url.Action("Index", "Product/Product")"><span class="icon"></span>Mua ngay</a>
                     </div>
                 </li>
             }
@@ -148,7 +148,7 @@
                                     </div>
                                 </div>
 
-                                <h2><a href="single-product.html">@item.Name </a></h2>
+                                <h2><a href="@Url.Action("Detail","Product",new { Id =item.Id})">@item.Name </a></h2>
 
                                 <div class="product-carousel-price">
                                     <ins>@item.Price VNĐ</ins> <del>@item.PriceSale VNĐ</del>
@@ -277,8 +277,8 @@
                     {
                         <div class="single-wid-product">
 
-                            <a href="single-product.html"><img src="~/Content/img/Product/@item.Img" alt="" class="product-thumb"></a>
-                            <h2><a href="single-product.html">@item.Name</a></h2>
+                            <a href="@Url.Action("Detail","Product",new { Id =item.Id})"><img src="~/Content/img/Product/@item.Img" alt="" class="product-thumb"></a>
+                            <h2><a href="@Url.Action("Detail","Product",new { Id =item.Id})">@item.Name</a></h2>
                             <div class="product-wid-rating">
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
@@ -331,8 +331,8 @@
                     {
                         <div class="single-wid-product">
 
-                            <a href="single-product.html"><img src="~/Content/img/Product/@item.Img" alt="" class="product-thumb"></a>
-                            <h2><a href="single-product.html">@item.Name</a></h2>
+                            <a href="@Url.Action("Detail","Product",new { Id =item.Id})"><img src="~/Content/img/Product/@item.Img" alt="" class="product-thumb"></a>
+                            <h2><a href="@Url.Action("Detail","Product",new { Id =item.Id})">@item.Name</a></h2>
                             <div class="product-wid-rating">
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
@@ -384,8 +384,8 @@
                     {
                         <div class="single-wid-product">
 
-                            <a href="single-product.html"><img src="~/Content/img/Product/@item.Img" alt="" class="product-thumb"></a>
-                            <h2><a href="single-product.html">@item.Name</a></h2>
+                            <a href="@Url.Action("Detail","Product",new { Id =item.Id})"><img src="~/Content/img/Product/@item.Img" alt="" class="product-thumb"></a>
+                            <h2><a href="@Url.Action("Detail","Product",new { Id =item.Id})">@item.Name</a></h2>
                             <div class="product-wid-rating">
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
