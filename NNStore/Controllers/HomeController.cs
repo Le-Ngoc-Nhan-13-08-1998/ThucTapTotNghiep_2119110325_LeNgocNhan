@@ -50,10 +50,10 @@ namespace NNStore.Controllers
                     var check = objNNStoreEntities.Users.FirstOrDefault(s => s.Email == _user.Email);
                     if (check == null)
                     {
-                        _user.Password = GetMD5(_user.Password);
+                    _user.Password = GetMD5(_user.Password);
                         objNNStoreEntities.Configuration.ValidateOnSaveEnabled = false;
                         objNNStoreEntities.Users.Add(_user);
-                        objNNStoreEntities.SaveChanges();
+                         objNNStoreEntities.SaveChanges();
                         return RedirectToAction("Index");
                     }
                     else
