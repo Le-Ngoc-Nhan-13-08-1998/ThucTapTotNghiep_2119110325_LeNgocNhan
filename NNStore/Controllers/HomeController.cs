@@ -29,8 +29,14 @@ namespace NNStore.Controllers
 
                 return View();
             }
+            public ActionResult Post()
+            {
+                ViewBag.Message = "Your application description page.";
 
-            public ActionResult Contact()
+                return View();
+            }
+
+             public ActionResult Contact()
             {
                 ViewBag.Message = "Your contact page.";
 
