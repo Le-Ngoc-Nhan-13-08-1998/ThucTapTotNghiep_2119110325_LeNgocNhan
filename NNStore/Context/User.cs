@@ -24,11 +24,11 @@ namespace NNStore.Context
         public Nullable<int> Phone { get; set; }
         public string Address { get; set; }
         public string Roles { get; set; }
-        public int CountError { get; set; }
-        public int CreatedBy { get; set; }
-        public System.DateTime CreatedAt { get; set; }
-        public int UpdatedBy { get; set; }
-        public System.DateTime UpdatedAt { get; set; }
+        public Nullable<int> CountError { get; set; }
+        public Nullable<int> CreatedBy { get; set; }
+        public Nullable<System.DateTime> CreatedAt { get; set; }
+        public Nullable<int> UpdatedBy { get; set; }
+        public Nullable<System.DateTime> UpdatedAt { get; set; }
         public Nullable<int> Stutus { get; set; }
     }
 }

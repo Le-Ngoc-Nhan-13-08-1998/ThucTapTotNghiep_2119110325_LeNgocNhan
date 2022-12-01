@@ -15,7 +15,6 @@ namespace NNStore.Context
     public partial class Post
     {
         public int Id { get; set; }
-        public Nullable<int> TopId { get; set; }
         public string Title { get; set; }
         public string Slug { get; set; }
         public string Detail { get; set; }
@@ -23,10 +22,11 @@ namespace NNStore.Context
         public string PostType { get; set; }
         public string MetaDesc { get; set; }
         public string MetaKey { get; set; }
-        public int CreatedBy { get; set; }
-        public System.DateTime CreatedAt { get; set; }
-        public int UpdatedBy { get; set; }
-        public System.DateTime UpdateAt { get; set; }
+        public Nullable<int> CreatedBy { get; set; }
+        public Nullable<System.DateTime> CreatedAt { get; set; }
+        public Nullable<int> UpdatedBy { get; set; }
+        public Nullable<System.DateTime> UpdateAt { get; set; }
         public Nullable<int> Status { get; set; }
+        public Nullable<int> TopId1 { get; set; }
     }
 }

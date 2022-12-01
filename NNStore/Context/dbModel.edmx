@@ -111,16 +111,16 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TopId" Type="int" />
           <Property Name="Title" Type="nvarchar(max)" />
-          <Property Name="Slug" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="Detail" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="Img" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="PostType" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Slug" Type="nvarchar(max)" />
+          <Property Name="Detail" Type="nvarchar(max)" />
+          <Property Name="Img" Type="nvarchar(max)" />
+          <Property Name="PostType" Type="nvarchar(max)" />
           <Property Name="MetaDesc" Type="nvarchar(max)" />
           <Property Name="MetaKey" Type="nvarchar(max)" />
-          <Property Name="CreatedBy" Type="int" Nullable="false" />
-          <Property Name="CreatedAt" Type="datetime" Nullable="false" />
-          <Property Name="UpdatedBy" Type="int" Nullable="false" />
-          <Property Name="UpdateAt" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreatedAt" Type="datetime" />
+          <Property Name="UpdatedBy" Type="int" />
+          <Property Name="UpdateAt" Type="datetime" />
           <Property Name="Status" Type="int" />
         </EntityType>
         <EntityType Name="Product">
@@ -183,17 +183,17 @@
           <Property Name="FullName" Type="nvarchar(max)" />
           <Property Name="UserName" Type="nvarchar(max)" />
           <Property Name="Password" Type="nvarchar(max)" />
-          <Property Name="Img" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Img" Type="nvarchar(max)" />
           <Property Name="Email" Type="nvarchar(max)" />
           <Property Name="Gender" Type="nvarchar(max)" />
           <Property Name="Phone" Type="int" />
-          <Property Name="Address" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Address" Type="nvarchar(max)" />
           <Property Name="Roles" Type="nvarchar(max)" />
-          <Property Name="CountError" Type="int" Nullable="false" />
-          <Property Name="CreatedBy" Type="int" Nullable="false" />
-          <Property Name="CreatedAt" Type="datetime" Nullable="false" />
-          <Property Name="UpdatedBy" Type="int" Nullable="false" />
-          <Property Name="UpdatedAt" Type="datetime" Nullable="false" />
+          <Property Name="CountError" Type="int" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreatedAt" Type="datetime" />
+          <Property Name="UpdatedBy" Type="int" />
+          <Property Name="UpdatedAt" Type="datetime" />
           <Property Name="Stutus" Type="int" />
         </EntityType>
         <EntityContainer Name="NNStoreModelStoreContainer">
@@ -318,19 +318,19 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TopId" Type="Int32" />
           <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Slug" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="PostType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Slug" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PostType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="MetaDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="MetaKey" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
-          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="UpdatedBy" Type="Int32" Nullable="false" />
-          <Property Name="UpdateAt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreatedAt" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int32" />
+          <Property Name="UpdateAt" Type="DateTime" Precision="3" />
           <Property Name="Status" Type="Int32" />
+          <Property Name="TopId1" Type="Int32" />
         </EntityType>
         <EntityType Name="Product">
           <Key>
@@ -392,17 +392,17 @@
           <Property Name="FullName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="UserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Gender" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Phone" Type="Int32" />
-          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Roles" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="CountError" Type="Int32" Nullable="false" />
-          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
-          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="UpdatedBy" Type="Int32" Nullable="false" />
-          <Property Name="UpdatedAt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CountError" Type="Int32" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreatedAt" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int32" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
           <Property Name="Stutus" Type="Int32" />
         </EntityType>
         <EntityContainer Name="NNStoreEntities" annotation:LazyLoadingEnabled="true">
@@ -534,8 +534,8 @@
           <EntitySetMapping Name="Posts">
             <EntityTypeMapping TypeName="NNStoreModel.Post">
               <MappingFragment StoreEntitySet="Post">
+                <ScalarProperty Name="TopId1" ColumnName="TopId" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="TopId" ColumnName="TopId" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
                 <ScalarProperty Name="Slug" ColumnName="Slug" />
                 <ScalarProperty Name="Detail" ColumnName="Detail" />

@@ -247,7 +247,8 @@
                     <div class="brand-list">
                         @foreach (var item in Model.ListBrand)
                         {
-                            <img src="~/Content/img/Brand/@item.Img" alt="">
+                            <img src="~/Content/img/Brand/@item.Img" alt="@Url.Action("Category","ProductCategory",new { Id =item.Id})">
+                            @*<a href="@Url.Action("Category","ProductCategory",new { Id =item.Id})"></a>*@
                         }
 
                         @*<img src="img/brand2.png" alt="">
