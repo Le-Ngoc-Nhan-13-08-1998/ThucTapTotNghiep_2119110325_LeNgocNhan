@@ -8,7 +8,7 @@ namespace NNStore.Areas.Admin.Controllers
 {
     public class HomeAdminController : Controller
     {
-        // GET: Admin/HomeAdmin
+        // GET: Admin/Home
         public ActionResult Index()
         {
             return View();
