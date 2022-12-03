@@ -43,12 +43,7 @@ namespace NNStore.Areas.Admin.Controllers
             lstProduct = lstProduct.OrderByDescending(n => n.Id).ToList();
             return View(lstProduct.ToPagedList(pageNumber, pageSize));
         }
-        //public ActionResult Index(string SearchString)
-        //{
-        //    var lstProduct = ojbWebsiteBanHangEntities.Product_2119110325.Where(n => n.Name.Contains(SearchString)).ToList();
-
-        //    return View(lstProduct);
-        //}
+     
         [HttpGet]
         public ActionResult Create()
         {
@@ -56,24 +51,30 @@ namespace NNStore.Areas.Admin.Controllers
             return View();
         }
         [ValidateInput(false)]
-        
-        public ActionResult Create(Product objproduct_2119110325)
+        [HttpPost]
+        public ActionResult Create(Product objproduct)
         {
             this.LoadData();
 
             try
             {
-                if (objproduct_2119110325.ImageUpload != null)
+                if (objproduct.ImageUpload != null)
                 {
-                    string fileName = Path.GetFileNameWithoutExtension(objproduct_2119110325.ImageUpload.FileName);
-                    string extention = Path.GetExtension(objproduct_2119110325.ImageUpload.FileName);
+                    string fileName = Path.GetFileNameWithoutExtension(objproduct.ImageUpload.FileName);
+                    string extention = Path.GetExtension(objproduct.ImageUpload.FileName);
                     fileName = fileName + "_" + long.Parse(DateTime.Now.ToString("yyyyMMddhhmmss")) + extention;
-                    objproduct_2119110325.Img = fileName;
-                    objproduct_2119110325.ImageUpload.SaveAs(Path.Combine(Server.MapPath("~/Content/images/items"), fileName));
-                }
-                ojbNNStoreEntities.Products.Add(objproduct_2119110325);
+                    objproduct.Img = fileName;
+                    objproduct.ImageUpload.SaveAs(Path.Combine(Server.MapPath("~/Content/img/Update"), fileName));
+               
+                ojbNNStoreEntities.Products.Add(objproduct);
                 ojbNNStoreEntities.SaveChanges();
                 return RedirectToAction("Index");
+                }
+                else
+                {
+                    return View();
+                }
+
 
             }
             catch (Exception)
@@ -126,7 +127,7 @@ namespace NNStore.Areas.Admin.Controllers
                     string extention = Path.GetExtension(objProduct.ImageUpload.FileName);
                     fileName = fileName + extention;
                     objProduct.Img = fileName;
-                    objProduct.ImageUpload.SaveAs(Path.Combine(Server.MapPath("~/Content/images/items"), fileName));
+                    objProduct.ImageUpload.SaveAs(Path.Combine(Server.MapPath("~/Content/img/Product"), fileName));
                    
                 }
                 //else

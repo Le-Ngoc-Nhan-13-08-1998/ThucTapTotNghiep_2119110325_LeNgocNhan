@@ -2219,6 +2219,11 @@
     <Content Include="Content\Admin\plugins\summernote\summernote.js.map" />
     <Content Include="Content\Admin\plugins\summernote\summernote.min.js.map" />
     <Content Include="Content\Admin\plugins\toastr\toastr.js.map" />
+    <Content Include="Areas\Admin\Views\ProductAdmin\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductAdmin\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductAdmin\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductAdmin\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductAdmin\Create.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

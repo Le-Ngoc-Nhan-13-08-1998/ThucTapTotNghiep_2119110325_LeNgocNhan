@@ -21,7 +21,7 @@ namespace NNStore.Context
       
         [Display(Name = "Mô tả ngắn")]
         [Required(ErrorMessage = "Vui lòng nhập mô tả ngắn cho sản phẩm")]
-        [StringLength(500, ErrorMessage = "Mô tả ngắn phải từ 50 - 500 kí tự.", MinimumLength = 50)]
+        [StringLength(500, ErrorMessage = "Mô tả ngắn phải từ 1 - 500 kí tự.", MinimumLength = 1)]
         public string ShortDes { get; set; }
         [Display(Name = "Mô tả chi tiết")]
         public string FullDescription { get; set; }
