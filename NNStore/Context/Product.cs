@@ -11,14 +11,9 @@ namespace NNStore.Context
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
-    using System.Xml.Linq;
-
+    
     public partial class Product
     {
-        //[NotMapped]
-        //public System.Web.HttpPostedFileBase ImageUpload { get; set; }
         public int Id { get; set; }
         public string Name { get; set; }
         public string Slug { get; set; }
@@ -35,6 +30,5 @@ namespace NNStore.Context
         public Nullable<int> UpdatedBy { get; set; }
         public Nullable<System.DateTime> UpdatedAt { get; set; }
         public Nullable<bool> Deleted { get; set; }
-        public Nullable<int> Status { get; set; }
     }
 }

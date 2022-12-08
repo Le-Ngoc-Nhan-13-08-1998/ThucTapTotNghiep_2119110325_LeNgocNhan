@@ -143,7 +143,6 @@
           <Property Name="UpdatedBy" Type="int" />
           <Property Name="UpdatedAt" Type="datetime" />
           <Property Name="Deleted" Type="bit" />
-          <Property Name="Status" Type="int" />
         </EntityType>
         <EntityType Name="Slider">
           <Key>
@@ -352,7 +351,6 @@
           <Property Name="UpdatedBy" Type="Int32" />
           <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
           <Property Name="Deleted" Type="Boolean" />
-          <Property Name="Status" Type="Int32" />
         </EntityType>
         <EntityType Name="Slider">
           <Key>
@@ -570,7 +568,6 @@
                 <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
                 <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
                 <ScalarProperty Name="Deleted" ColumnName="Deleted" />
-                <ScalarProperty Name="Status" ColumnName="Status" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

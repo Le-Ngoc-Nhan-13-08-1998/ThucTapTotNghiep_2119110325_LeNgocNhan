@@ -18,8 +18,8 @@ namespace NNStore.Controllers
                 HomeModel objHomeModel = new HomeModel();
                 objHomeModel.ListCategory = objNNStoreEntities.Categories.ToList();
                 objHomeModel.ListProduct = objNNStoreEntities.Products.ToList();
-            objHomeModel.ListSlider = objNNStoreEntities.Sliders.ToList();
-            objHomeModel.ListBrand = objNNStoreEntities.Brands.ToList();
+                objHomeModel.ListSlider = objNNStoreEntities.Sliders.ToList();
+                objHomeModel.ListBrand = objNNStoreEntities.Brands.ToList();
             return View(objHomeModel);
             }
 

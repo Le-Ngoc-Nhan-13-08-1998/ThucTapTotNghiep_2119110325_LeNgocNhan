@@ -14,8 +14,9 @@
 
 
 
+
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    @*<link href="img/favicon.ico" rel="icon">*@
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -44,6 +45,8 @@
 
     <!-- Template Javascript -->
     <script src="~/Content/js/main.js"></script>
+
+
 
 
 
@@ -98,48 +101,47 @@
                                 <li>
                                     <a href="~/Home/Register" class="fa fa-user"> Đăng kí</a>
                                 </li>
-                                    }
-                            </ul>
+                            }
+                        </ul>
                     </div>
                 </div>
 
                 @*<div class=" col-md-4" style="margin-top: 5px;">
-                    @using (Html.BeginForm("Product", "Product", FormMethod.Get))
-                    {
-                        <div class="form-group form-inline">
-                            @Html.TextBox("SearchString", "", new { @class = "form-control col-md-10" })
-                            <div class="input-group-append" style="margin-left:1px;">
-                                <button class="btn btn-primary" type="submit" style="background-color: #ff6a00">
-                                    <i class="fa fa-search"></i> Tìm kiếm
-                                </button>
+                        @using (Html.BeginForm("Product", "Product", FormMethod.Get))
+                        {
+                            <div class="form-group form-inline">
+                                @Html.TextBox("SearchString", "", new { @class = "form-control col-md-10" })
+                                <div class="input-group-append" style="margin-left:1px;">
+                                    <button class="btn btn-primary" type="submit" style="background-color: #ff6a00">
+                                        <i class="fa fa-search"></i> Tìm kiếm
+                                    </button>
+                                </div>
                             </div>
-                        </div>
-                    }
-                </div>*@
+                        }
+                    </div>*@
 
                 @*<div class="col-md-4">
-            <div class="header-right">
-                <ul class="list-unstyled list-inline">
-                    <li class="dropdown dropdown-small">
-                        <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#"><span class="key">currency :</span><span class="value">USD </span><b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">USD</a></li>
-                            <li><a href="#">INR</a></li>
-                            <li><a href="#">GBP</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="dropdown dropdown-small">
-                        <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#"><span class="key">language :</span><span class="value">English </span><b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">English</a></li>
-                            <li><a href="#">French</a></li>
-                            <li><a href="#">German</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>*@
+                        <div class="header-right">
+                            <ul class="list-unstyled list-inline">
+                                <li class="dropdown dropdown-small">
+                                    <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#"><span class="key">currency :</span><span class="value">USD </span><b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">USD</a></li>
+                                        <li><a href="#">INR</a></li>
+                                        <li><a href="#">GBP</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown dropdown-small">
+                                    <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#"><span class="key">language :</span><span class="value">English </span><b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">English</a></li>
+                                        <li><a href="#">French</a></li>
+                                        <li><a href="#">German</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>*@
             </div>
         </div>
     </div> <!-- End header area -->
@@ -152,18 +154,20 @@
                         <h1><a href=""><img src="~/Content/img/Logo/logo.jpg"></a></h1>
                     </div>
                 </div>
-               
+
 
                 <div class="col-sm-6">
                     <div class="shopping-item">
-                        <a href="https://localhost:44382/Cart/Cart">Giỏ hàng<span class="cart-amunt"></span> <i class="fa fa-shopping-cart"></i> <span class="product-count">
+                        <a href="https://localhost:44382/Cart/Cart">
+                            Giỏ hàng<span class="cart-amunt"></span> <i class="fa fa-shopping-cart"></i> <span class="product-count">
                                 @if (@Session["cart"] == null)
                                 {
                                     <em>0</em> }
                                 else
                                 {
                                     @Session["count"]}
-                    </span></a>
+                            </span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -195,13 +199,12 @@
                     </ul>
                 </div>
                 <ul class="navbar-nav ml-md-auto">
-                    
                 </ul>
             </div>
         </div>
     </div> <!-- End mainmenu area -->
 
- 
+
     @RenderBody()
     <div class="footer-top-area">
         <div class="zigzag-bottom"></div>
@@ -234,21 +237,20 @@
                 </div>
 
                 @*<div class="col-md-3 col-sm-6">
-            <div class="footer-menu">
-                <h2 class="footer-wid-title">Danh mục</h2>
-                @foreach (var item in Model.ListCategory)
-                {
-                    <ul>
-                        <li><a href="#">@item.Name</a></li>
-                        <li><a href="#">Home accesseries</a></li>
-                        <li><a href="#">LED TV</a></li>
-                        <li><a href="#">Computer</a></li>
-                        <li><a href="#">Gadets</a></li>
-                    </ul>
-                }
-
-            </div>
-        </div>*@
+                        <div class="footer-menu">
+                            <h2 class="footer-wid-title">Danh mục</h2>
+                            @foreach (var item in Model.ListCategory)
+                            {
+                                <ul>
+                                    <li><a href="#">@item.Name</a></li>
+                                    <li><a href="#">Home accesseries</a></li>
+                                    <li><a href="#">LED TV</a></li>
+                                    <li><a href="#">Computer</a></li>
+                                    <li><a href="#">Gadets</a></li>
+                                </ul>
+                            }
+                        </div>
+                    </div>*@
 
                 <div class="col-md-3 col-sm-6">
                     <div class="footer-newsletter">
@@ -285,24 +287,22 @@
                         </div>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </div> <!-- End footer top area -->
-
     @*<div class="footer-bottom-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8">
-                    <div class="copyright">
-                        <p>&copy; 2015 uCommerce. All Rights Reserved. <a href="http://www.freshdesignweb.com" target="_blank">freshDesignweb.com</a></p>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="copyright">
+                            <p>&copy; 2015 uCommerce. All Rights Reserved. <a href="http://www.freshdesignweb.com" target="_blank">freshDesignweb.com</a></p>
+                        </div>
                     </div>
-                </div>
 
-                
+                </div>
             </div>
-        </div>
-    </div>*@ <!-- End footer bottom area -->
+        </div>*@ <!-- End footer bottom area -->
     <!-- Latest jQuery form server -->
     <script src="https://code.jquery.com/jquery.min.js"></script>
 
