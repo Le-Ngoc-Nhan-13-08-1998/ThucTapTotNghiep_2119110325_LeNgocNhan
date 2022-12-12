@@ -34,9 +34,16 @@
                             <ins>@item.Price VNĐ</ins> <del>@item.PriceSale VNĐ</del>
                         </div>
 
-                        <div class="product-option-shop">
-                            <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="#" id="addtocart">Thêm vào giỏ</a>
-                        </div>
+                        <a href="@Url.Action("Cart","Cart")">
+                            Giỏ hàng<span class="cart-amunt"></span> <i class="fa fa-shopping-cart"></i> <span class="product-count">
+                                @if (@Session["cart"] == null)
+                                {
+                                    <em>0</em> }
+                                else
+                                {
+                                    @Session["count"]}
+                            </span>
+                        </a>
                     </div>
                 </div>
             }

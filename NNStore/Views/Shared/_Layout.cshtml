@@ -86,23 +86,26 @@
 
 
 
-                            <li><a href=""><i class="fa fa-user">Thông tin</i> </a></li>
 
-                            @if (Session["idUser"] != null)
+
+                            @if (Session["Email"] != null)
                             {
-                                <a href="https://localhost:44397/Admin/HomeAdmin/Index" class="btn btn-warming">Trang Quản Trị</a>
-                                <a href="~/Home/Logout" class="fa fa-user">Đăng xuất </a>
-                            }
-                            else
-                            {
+                                    <li><a style="margin-right:7px">Xin Chào: @Session["Email"].ToString()</a></li>
+                                
+                                <li> <a href="~/Admin/Home/Index" class="btn btn-warming">Trang Quản Trị</a></li>
+                                <li><a href="~/Home/Logout" class="fa fa-user">Đăng xuất </a></li>
+
+                             }
+                                else
+                                {
                                 <li>
                                     <a href="~/Home/Login" class="fa fa-user">Đăng nhập</a>
                                 </li>
                                 <li>
                                     <a href="~/Home/Register" class="fa fa-user"> Đăng kí</a>
                                 </li>
-                            }
-                        </ul>
+                                }
+                            </ul>
                     </div>
                 </div>
 
@@ -158,7 +161,7 @@
 
                 <div class="col-sm-6">
                     <div class="shopping-item">
-                        <a href="https://localhost:44397/Cart/Cart">
+                        <a href="@Url.Action("Cart","Cart")">
                             Giỏ hàng<span class="cart-amunt"></span> <i class="fa fa-shopping-cart"></i> <span class="product-count">
                                 @if (@Session["cart"] == null)
                                 {

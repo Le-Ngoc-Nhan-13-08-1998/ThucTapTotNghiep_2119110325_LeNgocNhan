@@ -2480,12 +2480,11 @@
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Home\Post.cshtml" />
     <Content Include="Views\Cart\Cart.cshtml" />
-    <Content Include="Views\Payment\Index.cshtml" />
+    <Content Include="Views\Payment\Payment.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
-    <Folder Include="Views\Brand\" />
     <Folder Include="Views\Order\" />
     <Folder Include="Views\Post\" />
   </ItemGroup>
