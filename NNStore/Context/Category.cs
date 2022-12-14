@@ -21,12 +21,12 @@ namespace NNStore.Context
         public Nullable<int> ParentId { get; set; }
         public Nullable<int> Orders { get; set; }
         public string MetaDesc { get; set; }
+        public Nullable<bool> ShowOnHomePage { get; set; }
         public string MetaKey { get; set; }
         public Nullable<System.DateTime> CreatedAt { get; set; }
         public Nullable<int> CreatedBy { get; set; }
         public Nullable<System.DateTime> UpdatedAt { get; set; }
         public Nullable<int> UpdatedBy { get; set; }
         public Nullable<int> Status { get; set; }
-        public Nullable<bool> ShowOnHomePage { get; set; }
     }
 }

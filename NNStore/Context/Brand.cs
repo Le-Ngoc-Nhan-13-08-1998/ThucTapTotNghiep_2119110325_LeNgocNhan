@@ -18,11 +18,11 @@ namespace NNStore.Context
         public string Name { get; set; }
         public string Img { get; set; }
         public string Slug { get; set; }
+        public string ShortDetail { get; set; }
         public Nullable<bool> ShowOnHomePage { get; set; }
         public Nullable<int> DisplayOrder { get; set; }
         public Nullable<System.DateTime> CreatedOnUtc { get; set; }
         public Nullable<System.DateTime> UpdateUtc { get; set; }
         public Nullable<bool> Deleted { get; set; }
-        public string ShortDetail { get; set; }
     }
 }

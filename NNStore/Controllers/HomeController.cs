@@ -88,7 +88,8 @@ namespace NNStore.Controllers
                     if (data.Count() > 0)
                     {
                     //add session
-                        Session["UserName"] = data.FirstOrDefault().UserName;
+                    Session["UserId"] = data.FirstOrDefault().UserId;
+                    Session["UserName"] = data.FirstOrDefault().UserName;
                     Session["Password"] = data.FirstOrDefault().Password;
                     Session["FullName"] = data.FirstOrDefault().FullName;
                     Session["Img"] = data.FirstOrDefault().Img;

@@ -15,7 +15,7 @@ namespace NNStore.Context
     public partial class Order
     {
         public int Id { get; set; }
-        public string UserId { get; set; }
+        public Nullable<int> UserId { get; set; }
         public string RecciverName { get; set; }
         public string RecciverPhone { get; set; }
         public string RecciverEmail { get; set; }

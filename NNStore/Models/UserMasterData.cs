@@ -11,9 +11,9 @@ namespace NNStore.Context
     {
         [Display(Name = "Id Người dùng")]
         public int Id { get; set; }
-        [Display(Name = "Họ tên Người dùng")]
+        [Display(Name = "Tên Người dùng")]
         public string FullName { get; set; }
-        [Display(Name = "Tài khoản Người dùng")]
+        [Display(Name = "Họ Người dùng")]
         public string UserName { get; set; }
         [Display(Name = "Mật khẩu Người dùng")]
         public string Password { get; set; }
