@@ -2446,6 +2446,14 @@
     <Content Include="Context\dbModel.edmx.diagram">
       <DependentUpon>dbModel.edmx</DependentUpon>
     </Content>
+    <Content Include="Areas\Admin\Views\CategoryAdmin\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\CategoryAdmin\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\CategoryAdmin\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\CategoryAdmin\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\CategoryAdmin\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\UserAdmin\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\UserAdmin\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\UserAdmin\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

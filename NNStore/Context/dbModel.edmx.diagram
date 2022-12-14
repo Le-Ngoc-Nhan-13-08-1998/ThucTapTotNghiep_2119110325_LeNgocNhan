@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="44effb7f7f4f41128d74db2a0f71f230" Name="Diagram1">
+      <Diagram DiagramId="c51c944690274ec48c22f0f246241568" Name="Diagram1">
         <EntityTypeShape EntityType="ThucTapModel.Brand" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ThucTapModel.Category" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ThucTapModel.Config" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />

@@ -30,5 +30,6 @@ namespace NNStore.Context
         public Nullable<int> UpdatedBy { get; set; }
         public Nullable<System.DateTime> UpdatedAt { get; set; }
         public Nullable<bool> Deleted { get; set; }
+        public Nullable<int> Status { get; set; }
     }
 }

@@ -8,7 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using NNStore.Context;
 
-namespace WebBanHang.Areas.Admin.Controllers
+namespace NNStore.Areas.Admin.Controllers
 {
     public class CategoryAdminController : Controller
     {
