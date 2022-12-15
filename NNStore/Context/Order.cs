@@ -16,10 +16,10 @@ namespace NNStore.Context
     {
         public int Id { get; set; }
         public Nullable<int> UserId { get; set; }
-        public string RecciverName { get; set; }
-        public string RecciverPhone { get; set; }
-        public string RecciverEmail { get; set; }
-        public string RecciverAdress { get; set; }
+        public string UserName { get; set; }
+        public string Phone { get; set; }
+        public string Email { get; set; }
+        public string Adress { get; set; }
         public string Note { get; set; }
         public Nullable<int> CreatedBy { get; set; }
         public Nullable<System.DateTime> CreatedAt { get; set; }

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ThucTapModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="ThucTapModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Brand">
           <Key>
             <PropertyRef Name="Id" />
@@ -79,12 +79,12 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="UserId" Type="int" />
-          <Property Name="RecciverName" Type="nvarchar(max)" />
-          <Property Name="RecciverPhone" Type="nvarchar(max)" />
-          <Property Name="RecciverEmail" Type="nvarchar(max)" />
-          <Property Name="RecciverAdress" Type="nvarchar(max)" />
+          <Property Name="UserName" Type="nvarchar(max)" />
+          <Property Name="Phone" Type="nvarchar(max)" />
+          <Property Name="Email" Type="nvarchar(max)" />
+          <Property Name="Adress" Type="nvarchar(max)" />
           <Property Name="Note" Type="nvarchar(max)" />
           <Property Name="CreatedBy" Type="int" />
           <Property Name="CreatedAt" Type="datetime" />
@@ -211,8 +211,7 @@
           <EntitySet Name="Topic" EntityType="Self.Topic" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ThucTapModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -292,10 +291,10 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="UserId" Type="Int32" />
-          <Property Name="RecciverName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="RecciverPhone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="RecciverEmail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="RecciverAdress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Adress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="CreatedBy" Type="Int32" />
           <Property Name="CreatedAt" Type="DateTime" Precision="3" />
@@ -508,10 +507,10 @@
               <MappingFragment StoreEntitySet="Order">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
-                <ScalarProperty Name="RecciverName" ColumnName="RecciverName" />
-                <ScalarProperty Name="RecciverPhone" ColumnName="RecciverPhone" />
-                <ScalarProperty Name="RecciverEmail" ColumnName="RecciverEmail" />
-                <ScalarProperty Name="RecciverAdress" ColumnName="RecciverAdress" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Adress" ColumnName="Adress" />
                 <ScalarProperty Name="Note" ColumnName="Note" />
                 <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
                 <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />

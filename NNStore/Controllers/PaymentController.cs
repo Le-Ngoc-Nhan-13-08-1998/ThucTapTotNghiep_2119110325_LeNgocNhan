@@ -23,7 +23,7 @@ namespace NNStore.Controllers
                 var lstCart = (List<CartModel>)Session["cart"];
                 //Gán dữ liệu cho order
                 Order objOrder = new Order();
-                objOrder.RecciverName = "Đơn hàng " + DateTime.Now.ToString("yyyyMMddHHmmss");
+                objOrder.UserName = "Đơn hàng " + DateTime.Now.ToString("yyyyMMddHHmmss");
                 objOrder.UserId = int.Parse(Session["UserId"].ToString());
                 objOrder.CreatedAt = DateTime.Now;
                 objOrder.Status = 1;

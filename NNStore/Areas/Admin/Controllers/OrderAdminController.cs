@@ -27,7 +27,7 @@ namespace NNStore.Areas.Admin.Controllers
             if (!string.IsNullOrEmpty(SearchString))
             {
                 //lấy tất cả các danh mucc theo từ khóa tìm kiếm
-                lstOrder = ojbNNStoreEntities.Orders.Where(n => n.RecciverName.Contains(SearchString)).ToList();
+                lstOrder = ojbNNStoreEntities.Orders.Where(n => n.UserName.Contains(SearchString)).ToList();
             }
             else
             { //lấy tất cả các danh mục trong category
