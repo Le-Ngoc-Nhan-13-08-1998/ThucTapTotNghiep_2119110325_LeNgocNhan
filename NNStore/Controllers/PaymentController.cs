@@ -37,7 +37,7 @@ namespace NNStore.Controllers
                 {
                     OrderDetail obj = new OrderDetail();
                     obj.Qty = item.Quantity;
-                    obj.OrderId = intOrderId;
+                    obj.Id = intOrderId;
                     obj.ProductId = item.Product.Id;
                     lstOrderDetail.Add(obj);
                 }

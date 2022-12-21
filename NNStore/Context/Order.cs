@@ -16,6 +16,7 @@ namespace NNStore.Context
     {
         public int Id { get; set; }
         public Nullable<int> UserId { get; set; }
+        public string Name { get; set; }
         public string UserName { get; set; }
         public string Phone { get; set; }
         public string Email { get; set; }
@@ -24,6 +25,7 @@ namespace NNStore.Context
         public Nullable<int> CreatedBy { get; set; }
         public Nullable<System.DateTime> CreatedAt { get; set; }
         public Nullable<int> UpdatedBy { get; set; }
+        public Nullable<System.DateTime> CreatedOnUtc { get; set; }
         public Nullable<System.DateTime> UpdatedAt { get; set; }
         public int Status { get; set; }
     }

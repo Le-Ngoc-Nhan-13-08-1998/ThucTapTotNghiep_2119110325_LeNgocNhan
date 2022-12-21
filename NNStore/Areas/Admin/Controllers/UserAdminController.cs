@@ -48,20 +48,20 @@ namespace NNStore.Areas.Admin.Controllers
         [HttpGet]
         public ActionResult Details(int id)
         {
-            var ojbUser = ojbNNStoreEntities.Users .Where(n => n. Id == id).FirstOrDefault();
+            var ojbUser = ojbNNStoreEntities.Users .Where(n => n.UserId == id).FirstOrDefault();
             return View(ojbUser);
         }
         [HttpGet]
         public ActionResult Delete(int id)
         {
-            var ojbUser = ojbNNStoreEntities.Users .Where(n => n. Id == id).FirstOrDefault();
+            var ojbUser = ojbNNStoreEntities.Users .Where(n => n.UserId == id).FirstOrDefault();
             return View(ojbUser);
         }
         [HttpPost]
         public ActionResult Delete(User objUser, int Id)
         {
-            objUser. Id = Id;
-            var ojbUser = ojbNNStoreEntities.Users .Where(n => n. Id == objUser. Id).FirstOrDefault();
+            objUser.UserId = Id;
+            var ojbUser = ojbNNStoreEntities.Users .Where(n => n.UserId == objUser.UserId).FirstOrDefault();
             ojbNNStoreEntities.Users .Remove(ojbUser);
             ojbNNStoreEntities.SaveChanges();
             return RedirectToAction("Index");
@@ -76,14 +76,14 @@ namespace NNStore.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int Id, User users)
         {
-            users. Id = Id;
+            users.Id = Id;
 
-            var check = ojbNNStoreEntities.Users.FirstOrDefault(s => s. Id == Id);
+            var check = ojbNNStoreEntities.Users.FirstOrDefault(s => s.Id == Id);
             if (check != null)
             {
                 users.Password = GetMD5(users.Password);
                 ojbNNStoreEntities.Configuration.ValidateOnSaveEnabled = false;
-                ojbNNStoreEntities.Entry(users. Id).State = EntityState.Modified;
+                ojbNNStoreEntities.Entry(users.Id).State = EntityState.Modified;
                 ojbNNStoreEntities.SaveChanges();
                 return RedirectToAction("Index");
             }
