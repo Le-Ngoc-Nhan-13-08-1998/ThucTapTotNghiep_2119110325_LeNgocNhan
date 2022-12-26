@@ -9,22 +9,65 @@
     <div class="container">
 
         <nav class="row">
-            @foreach (var item in Model)
-            {
-                <div class="col-md-3">
+            @*@foreach (var item in Model)
+        {*@
+            <div class="col-md-3">
 
-                    <div class="card card-banner">
-                        <div class="img-wrap" style="background: #ffd7d7 ">
-                            <img src="~/Content/img/Category/@item.Img">
-                        </div>
-                        <div class="card-body">
-                            <h4 class="card-title">
-                                @Html.ActionLink(item.Name, "ProductCategory", "Category", new { @Id = item.Id }, null)
-                            </h4>
-                        </div>
+                <div class="card card-banner">
+                    <div class="img-wrap" style="background: #ffd7d7 ">
+                        <img src="~/Content/img/Category/samsunggalaxya02sxin_1280x720-800-resize.jpg">
                     </div>
-                </div> <!-- col.// -->
-            }
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="https://localhost:44397/Category/ProductCategory/1">Điện thoại</a>
+                            @*@Html.ActionLink(item.Name, "ProductCategory", "Category", new { @Id = item.Id }, null)*@
+                        </h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+
+                <div class="card card-banner">
+                    <div class="img-wrap" style="background: #ffd7d7 ">
+                        <img src="~/Content/img/Category/laptop-2-trong-1-la-gi-uu-nhuoc-diem-la-gi-co-nen-.jpg">
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="https://localhost:44397/Category/ProductCategory/1">Laptop</a>
+                            @*@Html.ActionLink(item.Name, "ProductCategory", "Category", new { @Id = item.Id }, null)*@
+                        </h4>
+                    </div>
+                </div>
+            </div><!-- col.// -->
+            <div class="col-md-3">
+
+                <div class="card card-banner">
+                    <div class="img-wrap" style="background: #ffd7d7 ">
+                        <img src="~/Content/img/Category/dong-ho-thong-minh-bao-gom-nhung-tinh-nang-gi-5.jpg">
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="https://localhost:44397/Category/ProductCategory/11">Đồng hồ</a>
+                            @*@Html.ActionLink(item.Name, "ProductCategory", "Category", new { @Id = item.Id }, null)*@
+                        </h4>
+                    </div>
+                </div>
+            </div><!-- col.// -->
+            <div class="col-md-3">
+
+                <div class="card card-banner">
+                    <div class="img-wrap" style="background: #ffd7d7 ">
+                        <img src="~/Content/img/Category/galaxytabs6lite-30_1280x720-800-resize.jpg">
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="https://localhost:44397/Category/ProductCategory/12">Máy tính bản</a>
+                            @*@Html.ActionLink(item.Name, "ProductCategory", "Category", new { @Id = item.Id }, null)*@
+                        </h4>
+                    </div>
+                </div>
+            </div><!-- col.// -->
+            @*}*@
 
 
         </nav> <!-- row.// -->
