@@ -49,7 +49,7 @@ namespace NNStore.Areas.Admin.Controllers
                     string extention = Path.GetExtension(brand.ImageUpload.FileName);
                     fileName = fileName + "_" + long.Parse(DateTime.Now.ToString("yyyyMMddhhmmss")) + extention;
                     brand.Img = fileName;
-                    brand.ImageUpload.SaveAs(Path.Combine(Server.MapPath("~/Content/images/items"), fileName));
+                    brand.ImageUpload.SaveAs(Path.Combine(Server.MapPath("~/Content/img/Brand"), fileName));
                 }
                 ojbNNStoreEntities.Brands.Add(brand);
                 ojbNNStoreEntities.SaveChanges();

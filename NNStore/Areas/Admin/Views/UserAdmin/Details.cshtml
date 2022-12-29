@@ -5,41 +5,39 @@
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
-<<section class="section-content padding-y">
+<section class="section-content padding-y">
     <div class="card mx-auto" style="max-width:5500px; margin-left:50px;">
         <article class="card-body">
             <div class="content-wrapper">
                 <header class="mb-4"><h4 class="text-danger">Trang quản lý người dùng</h4></header>
                 <div class="form-group">
-                    <h3></h3>
-
                     <div>
-                        <h4>Thông tin người dùng</h4>
+                        <h4>Trang thông tin người dùng</h4>
                         <hr />
                         <dl class="dl-horizontal">
-                            @*<*@@*dt>
-                                    @Html.DisplayNameFor(model => model.ConfirmPasswords)
-                                </dt>
+                            @*<dt>
+                                @Html.DisplayNameFor(model => model.ConfirmPasswords)
+                            </dt>
 
-                                <dd>
-                                    @Html.DisplayFor(model => model.ConfirmPasswords)
-                                </dd>
+                            <dd>
+                                @Html.DisplayFor(model => model.ConfirmPasswords)
+                            </dd>
 
-                                <dt>
-                                    @Html.DisplayNameFor(model => model.Agree)
-                                </dt>
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Agree)
+                            </dt>
 
-                                <dd>
-                                    @Html.DisplayFor(model => model.Agree)
-                                </dd>
+                            <dd>
+                                @Html.DisplayFor(model => model.Agree)
+                            </dd>
 
-                                <dt>
-                                    @Html.DisplayNameFor(model => model.Remember)
-                                </dt>
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Remember)
+                            </dt>
 
-                                <dd>
-                                    @Html.DisplayFor(model => model.Remember)
-                                </dd>*@
+                            <dd>
+                                @Html.DisplayFor(model => model.Remember)
+                            </dd>*@
 
                             <dt>
                                 @Html.DisplayNameFor(model => model.FullName)
@@ -105,7 +103,7 @@
                                 @Html.DisplayFor(model => model.Address)
                             </dd>
 
-                            <dt>
+                            @*<dt>
                                 @Html.DisplayNameFor(model => model.Roles)
                             </dt>
 
@@ -159,17 +157,16 @@
 
                             <dd>
                                 @Html.DisplayFor(model => model.Stutus)
-                            </dd>
+                            </dd>*@
 
                         </dl>
                     </div>
                     <p>
-                        @*@Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |*@
-                        @Html.ActionLink("Back to List", "Index")
+                        <button> @Html.ActionLink("Quay lại", "Index")</button>
+
                     </p>
                 </div>
-            
-    </div>
-    </article>
+            </div>
+        </article>
     </div>
 </section>

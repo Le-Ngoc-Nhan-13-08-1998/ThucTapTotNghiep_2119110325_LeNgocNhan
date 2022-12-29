@@ -3,7 +3,15 @@
     ViewBag.Title = "Login";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+<script>$("#showHidePassword").click(function(){
+         if($(this).val() == "Show"){
+             $(this).val("Hide");
+             $("#password").attr("type", "text");
+         } else {
+             $(this).val("Show");
+             $("#password").attr("type", "password");
+         }
+    });</script>
 
 <section class="section-content padding-y">
     <div class="card mx-auto" style="max-width:3500px; margin-left:600px;">
@@ -25,6 +33,7 @@
 
                                     </div>
                                     <div class="form-group">
+                                       
                                         @Html.LabelFor(m => m.Password, "Mật khẩu")
                                         @Html.PasswordFor(m => m.Password, new { @class = "form-control", @placeholder = "Mật khẩu" })
                                     </div>

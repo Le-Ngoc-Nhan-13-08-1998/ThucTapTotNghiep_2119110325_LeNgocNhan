@@ -60,7 +60,7 @@ namespace NNStore.Areas.Admin.Controllers
                     string extention = Path.GetExtension(category.ImageUpload.FileName);
                     fileName = fileName + "_" + long.Parse(DateTime.Now.ToString("yyyyMMddhhmmss")) + extention;
                     category.Img = fileName;
-                    category.ImageUpload.SaveAs(Path.Combine(Server.MapPath("~/Content/images/items"), fileName));
+                    category.ImageUpload.SaveAs(Path.Combine(Server.MapPath("~/Content/img/Category"), fileName));
                 }
                 ojbNNStoreEntities.Categories.Add(category);
                 ojbNNStoreEntities.SaveChanges();
